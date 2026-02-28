@@ -34,9 +34,6 @@ const Navbar = ({ theme, setTheme }) => {
 
     return (
         <>
-            {/* ══════════════════════════════════
-          NAVBAR
-      ══════════════════════════════════ */}
             <header
                 className={`
           sticky top-0 z-50 w-full
@@ -49,7 +46,6 @@ const Navbar = ({ theme, setTheme }) => {
             >
                 <div className='flex items-center justify-between px-4 sm:px-10 lg:px-20 xl:px-36 max-w-[1440px] mx-auto'>
 
-                    {/* ── Logo ── */}
                     <a href='#' onClick={() => handleLinkClick('#')} className='shrink-0 z-10'>
                         <img
                             src={theme === 'dark' ? assets.logo_dark : assets.logo}
@@ -58,7 +54,6 @@ const Navbar = ({ theme, setTheme }) => {
                         />
                     </a>
 
-                    {/* ── Desktop nav links (md+) ── */}
                     <nav className='hidden md:flex items-center gap-1'>
                         {NAV_LINKS.map(({ label, href }) => (
                             <a
@@ -88,11 +83,9 @@ const Navbar = ({ theme, setTheme }) => {
                         ))}
                     </nav>
 
-                    {/* ── Right controls ── */}
                     <div className='flex items-center gap-2 sm:gap-3'>
                         <ThemeToggleBtn theme={theme} setTheme={setTheme} />
 
-                        {/* CTA — hidden on mobile */}
                         <a
                             href='#contact-us'
                             onClick={() => handleLinkClick('#contact-us')}
@@ -141,11 +134,7 @@ const Navbar = ({ theme, setTheme }) => {
                 </div>
             </header>
 
-            {/* ══════════════════════════════════
-          MOBILE DRAWER (below md)
-      ══════════════════════════════════ */}
-
-            {/* Backdrop */}
+        {/* mobile */}
             <div
                 onClick={() => setSideBarOpen(false)}
                 className={`
@@ -155,7 +144,6 @@ const Navbar = ({ theme, setTheme }) => {
         `}
             />
 
-            {/* Drawer panel — slides in from right */}
             <aside
                 className={`
           fixed top-0 right-0 bottom-0 z-[70]
@@ -168,7 +156,6 @@ const Navbar = ({ theme, setTheme }) => {
           ${sideBarOpen ? 'translate-x-0' : 'translate-x-full'}
         `}
             >
-                {/* Drawer header */}
                 <div className='flex items-center justify-between px-5 pt-5 pb-4 border-b border-gray-100 dark:border-white/8'>
                     <img
                         src={theme === 'dark' ? assets.logo_dark : assets.logo}
